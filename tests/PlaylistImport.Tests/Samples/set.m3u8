@@ -1,0 +1,12 @@
+#EXTM3U
+#PLAYLIST:Friday Set
+#EXTINF:637,deadmau5 - Strobe
+/Users/dj/Music/Strobe.mp3
+
+#EXTINF:-1 tvg-id="x",Stream Only
+https://example.com/stream
+#EXTALB:Opus
+#EXTINF:543,Eric Prydz - Opus
+C:\Music\Opus.flac
+# a comment line
+D:\Music\No Info.mp3
