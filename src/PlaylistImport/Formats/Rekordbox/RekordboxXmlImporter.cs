@@ -77,7 +77,8 @@ public sealed class RekordboxXmlImporter : IPlaylistImporter
             return;
         }
 
-        var lookup = (string?)node.Attribute("KeyType") == KeyTypeLocation ? byLocation : byId;
+        var byPath = (string?)node.Attribute("KeyType") == KeyTypeLocation;
+        var lookup = byPath ? byLocation : byId;
         var tracks = new List<PlaylistTrack>();
         foreach (var entry in node.Elements("TRACK"))
         {
@@ -87,7 +88,8 @@ public sealed class RekordboxXmlImporter : IPlaylistImporter
 
             tracks.Add(lookup.TryGetValue(key, out var track)
                 ? ToTrack(track, tracks.Count + 1)
-                : new PlaylistTrack { Position = tracks.Count + 1, SourceId = key }); // dangling reference: keep the slot
+                // Dangling reference: keep the slot, and the path when the key is one.
+                : new PlaylistTrack { Position = tracks.Count + 1, SourceId = key, Location = byPath ? DecodeLocation(key) : null });
         }
 
         output.Add(new Playlist

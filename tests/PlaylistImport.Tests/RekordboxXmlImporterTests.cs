@@ -63,6 +63,7 @@ public class RekordboxXmlImporterTests
         var missing = saturday.Tracks[1];
         Assert.Null(missing.Title);
         Assert.Equal("file://localhost/C:/Music/missing.mp3", missing.SourceId);
+        Assert.Equal("C:/Music/missing.mp3", missing.Location);
     }
 
     [Theory]
