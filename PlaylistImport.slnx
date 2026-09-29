@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/PlaylistImport/PlaylistImport.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/PlaylistImport.Tests/PlaylistImport.Tests.csproj" />
+  </Folder>
+</Solution>
