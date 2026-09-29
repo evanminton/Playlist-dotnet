@@ -5,7 +5,7 @@
     <RootNamespace>PlaylistImport</RootNamespace>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
-    <Description>Imports playlists from Rekordbox XML, CSV and M3U/M3U8 files into a common model.</Description>
+    <Description>Imports and exports playlists as Rekordbox XML, CSV and M3U/M3U8 through a common model.</Description>
   </PropertyGroup>
 
   <ItemGroup>
